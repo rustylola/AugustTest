@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2025 at 10:44 AM
+-- Generation Time: Feb 19, 2025 at 10:48 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.22
 
@@ -45,6 +45,27 @@ CREATE TABLE `aug_library` (
 INSERT INTO `aug_library` (`id`, `Title`, `ISBN`, `Author`, `Publisher`, `Year_Published`, `Category`, `Timestamp`) VALUES
 (2, 'Super', '142152', 'Master', 'Master Inc.', 1735660800, 'Heroes Test', '2025-02-19 09:05:19');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aug_user`
+--
+
+CREATE TABLE `aug_user` (
+  `id` int(6) NOT NULL,
+  `fname` varchar(40) NOT NULL,
+  `lname` varchar(40) NOT NULL,
+  `mname` varchar(40) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `aug_user`
+--
+
+INSERT INTO `aug_user` (`id`, `fname`, `lname`, `mname`, `timestamp`) VALUES
+(1, 'test', 'test', 'test', '2025-02-19 07:32:05');
+
 --
 -- Indexes for dumped tables
 --
@@ -56,6 +77,12 @@ ALTER TABLE `aug_library`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `aug_user`
+--
+ALTER TABLE `aug_user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -64,6 +91,12 @@ ALTER TABLE `aug_library`
 --
 ALTER TABLE `aug_library`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `aug_user`
+--
+ALTER TABLE `aug_user`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
